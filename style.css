@@ -1,0 +1,474 @@
+/* 全局样式重置：清除所有元素的默认边距、内边距，统一盒模型 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* 统一字体：微软雅黑，无衬线字体 */
+    font-family: "Microsoft YaHei", sans-serif;
+}
+body {
+    background-color: #1a1a1a; /* 深色模式主背景（深灰/黑色系） */
+    color: #f5f5f5; /* 浅色文字，保证可读性 */
+}
+header {
+    display: flex;
+    justify-content: space-between; /* 天气在左，语言框在右 */
+    align-items: center; /* 垂直居中 */
+    padding: 10px;
+    width: 100%;
+    margin: 0 auto 20px; /* 底部留间距，和搜索框分开 */
+}
+
+/* 天气模块字体大小 */
+#weather_container {
+     
+    top: 10px; 
+    left: 10px; 
+    color: #f5f5f5; 
+    font-size: 10px; /* 自定义大小，比如10px/11px/12px */
+    line-height: 0.9; /* 可选：减小行间距，让文字更紧凑 */
+}
+/* 单独调整天气模块里每行的字体（可选） */
+#weather_container div {
+    font-size: 13px; /* 比容器字体更小，精细化控制 */
+}
+
+#lang_switch{/*语言切换器*/
+    
+    top: 20px;         /* 距离顶部 20px */
+    right: 20px;       /* 距离右侧 20px */
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    background-color: #1a1a1a; /* 深色模式主背景（深灰/黑色系） */
+    color: #f5f5f5; /* 浅色文字，保证可读性 */
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+#lang_switch:hover{
+    background-color: #3f3f3f;
+}
+
+.search_engine_container{/*搜索框区域*/
+    display: flex;
+    gap: 10px; /* 输入框和按钮之间的间距 */
+    margin: 100px auto;
+    padding: 20px;
+    border: 1px solid #e0e0e0; /* 浅灰色边框 */
+    border-radius: 8px; /* 圆角 */
+    /* 轻微阴影，增加立体感 */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    /*响应式布局*/
+    width: 77%; /* 占满父容器宽度（默认是body） */
+    max-width: 800px; /* 大屏下最大宽度（比原来的500px更长） */
+    min-width: 300px; /* 小屏下最小宽度（保证内容不挤成一团） */
+    max-width: calc(100% - 40px); /* 兼容写法：宽度=屏幕宽度-左右各20px，避免贴边 */
+}
+
+#search_engine{
+    padding: 10px 10px;
+    background-color: #1a1a1a; /* 深色模式主背景（深灰/黑色系） */
+    color: #f5f5f5; /* 浅色文字，保证可读性 */
+    border: none; /* 去掉默认边框 */
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+#search_engine:hover{
+    background-color: #3f3f3f;
+}
+
+#search_input {/*输入区域*/
+    flex: 1; /* 占满剩余宽度 */
+    padding: 10px 12px; /* 内边距：上下8px，左右12px */
+    border: 1px solid #ddd; /* 浅灰色边框 */
+    border-radius: 49px; /* 圆角 */
+    font-size: 14px;
+    background-color: #1a1a1a; /* 深色模式主背景（深灰/黑色系） */
+    color: #f5f5f5; /* 浅色文字，保证可读性 */
+}
+#search_input:focus {
+    border-color: #666;
+    box-shadow: 0 0 5px rgba(102, 102, 102, 0.3);
+}
+
+#search_btn {/*搜索按钮*/
+    padding: 10px 20px;
+    background-color: #1a1a1a; /* 深色模式主背景（深灰/黑色系） */
+    color: #f5f5f5; /* 浅色文字，保证可读性 */
+    border: 1px solid #ddd;; /* 去掉默认边框 */
+    border-radius: 500px;
+    cursor: pointer; /* 鼠标悬浮变手型 */
+    /*  hover效果：鼠标悬浮时颜色变深 */
+    transition: background-color 0.2s;
+}
+#search_btn:hover {/*鼠标交互事件*/
+    background-color: #3f3f3f;
+}
+
+/* 第二部分容器 -----------------------------------------------------------------*/
+.second_part_container{
+    display: flex;
+    align-items: flex-start; /* 顶部对齐 */
+    justify-content: space-around; /* 均匀分布左右两个模块 */
+    width: 90%;
+    margin: 0 auto; /* 整个区域水平居中 */
+    gap: 20px;
+    
+}
+
+/* 表格容器样式 */
+.shortcut_container {
+  width: 95%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.shortcut_table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 15px; /* 单元格间距 */
+  table-layout: fixed; /* 固定表格布局，防止列宽变形 */
+  padding: 10px; /* 可选：表格内边距，让背景更美观 */
+  border-radius: 8px; /* 可选：表格圆角，和单元格呼应 */
+}
+
+/* 重置 td，只做布局，不参与视觉和 hover */
+.shortcut_cell {
+  text-align: center;
+  padding: 0; /* 去掉 td 的内边距 */
+  background: transparent; /* 去掉 td 背景 */
+  vertical-align: middle;
+}
+
+/* 把所有视觉和 hover 都放在 a 标签上 */
+.shortcut_cell a {
+  display: flex; /* 改为 flex，撑满单元格 */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  max-width: 120px;
+  margin: 0 auto; /* 水平居中 */
+  text-decoration: none;
+  color: inherit;
+  background-color: #666666; /* 正常背景色 */
+  transition: all 0.2s; /* 包含背景色和缩放 */
+  height: 100%; /* 垂直撑满单元格 */
+  box-sizing: border-box;
+}
+
+/* 强制覆盖链接状态样式 */
+.shortcut_cell a:link,
+.shortcut_cell a:visited,
+.shortcut_cell a:hover,
+.shortcut_cell a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* hover 效果移到 a 标签上 */
+.shortcut_cell a:hover {
+  background-color: #c1c1c1;
+  transform: scale(1.05);
+}
+
+
+
+/* 待办应用容器 */
+.todo_container {
+    width: 500px;
+    /* 上下50px，左右自动（水平居中） */
+    margin: 30px auto;
+   
+    border-radius: 8px; /* 圆角 */
+    border-bottom: 1px solid #666;
+    /* 轻微阴影，增加立体感 */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+/* 添加待办区域：Flex布局（让输入框和按钮并排） */
+.todo_add {
+    display: flex;
+    gap: 20px; /* 输入框和按钮之间的间距 */
+    margin-bottom: 20px;
+}
+/* 输入框样式 */
+#todo_input {
+    flex: 1; /* 占满剩余宽度 */
+    padding: 8px 12px; /* 内边距：上下8px，左右12px */
+    background-color: #1a1a1a;
+    border: 1px solid #666666; /* 浅灰色边框 */
+    border-radius: 49px; /* 圆角 */
+    font-size: 12px;
+    background-color: #1a1a1a; /* 深色模式主背景（深灰/黑色系） */
+    color: #f5f5f5; /* 浅色文字，保证可读性 */
+}
+
+
+/* 添加按钮样式 */
+#add_btn {
+    padding: 8px 20px;
+    background-color: #2e7e5a; /* Vue绿 */
+    color: white; /* 文字白色 */
+    border: none; /* 去掉默认边框 */
+    border-radius: 4px;
+    cursor: pointer; /* 鼠标悬浮变手型 */
+    /*  hover效果：鼠标悬浮时颜色变深 */
+    transition: background-color 0.2s;
+}
+
+#add_btn:hover {
+    background-color: #153a29;
+}
+
+/* 待办列表：去掉默认的圆点 */
+#todo_list {
+    list-style: none;
+}
+
+/* 单个待办项样式 */
+.todo_item {
+    display: flex;
+    justify-content: space-between; /* 内容左右分布 */
+    align-items: center; /* 垂直居中 */
+    padding: 10px; /* 下 padding 加大，拉开横线与底部的距离 */
+    border-bottom: 1px solid #666666; /* 改成深灰色（和你的深色主题匹配） */
+    margin-bottom: 20px; /* 额外增加 margin，让横线和下一项更疏远 */
+}
+
+/* 已完成的待办项：文字划线、变浅灰色 */
+
+.todo_item.done {
+  /* 移除整个item的删除线，仅给文字加 */
+  text-decoration: none !important;
+  color: #999;
+}
+.todo_item.done > div > span {
+  text-decoration: line-through; /* 仅文字加删除线 */
+}
+.todo_item.done .delete_btn {
+    text-decoration: none; /* 取消删除按钮的删除线 */
+}
+
+/* 复选框和文字的间距 */
+.todo_item input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+/* 删除按钮样式 */
+.todo_item .delete_btn {
+    color: #ff4444; /* 红色 */
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+/* 第三部分容器 -----------------------------------------------------------------*/
+/* 汇率模块整体样式 */
+.exchange_container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    background: #fff;
+}
+
+/* 添加汇率区域 */
+.exchange_add {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    width: 90%;
+}
+
+#exchange_code_input {
+    flex: 1;
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+#add_exchange_btn {
+    padding: 8px 20px;
+    background: #2196F3;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+#add_exchange_btn:hover {
+    background: #1976D2;
+}
+
+/* 汇率列表 - 横向排列 + 滚动 */
+.exchange_list {
+    display: flex;
+    gap: 15px;
+    padding: 10px 0;
+    overflow-x: auto; /* 超出横向滚动 */
+    scrollbar-width: thin; /* 精简滚动条 */
+    scrollbar-color: #2196F3 #f5f5f5;
+}
+
+/* 自定义滚动条样式（Chrome/Safari） */
+.exchange_list::-webkit-scrollbar {
+    height: 6px;
+}
+.exchange_list::-webkit-scrollbar-track {
+    background: #f5f5f5;
+    border-radius: 3px;
+}
+.exchange_list::-webkit-scrollbar-thumb {
+    background: #2196F3;
+    border-radius: 3px;
+}
+
+/* 汇率卡片 - 固定宽度 + 紧凑布局 */
+.exchange_card {
+    min-width: 200px; /* 固定最小宽度 */
+    width: 200px;
+    padding: 15px;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    position: relative;
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* 操作按钮容器（删除+交换） */
+.exchange_btns {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    display: flex;
+    gap: 5px;
+}
+
+/* 删除按钮 */
+.delete_exchange_btn {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    background: #f5f5f5;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 12px;
+    color: #666;
+}
+
+.delete_exchange_btn:hover {
+    background: #ff4444;
+    color: #fff;
+}
+
+/* 交换货币对按钮 */
+.swap_exchange_btn {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    text-align: center;
+    background: #f5f5f5;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 12px;
+    color: #666;
+}
+/* 手动刷新按钮：与添加按钮风格一致 */
+#refresh_btn {
+    /* 核心样式与添加按钮一致 */
+    padding: 8px 20px;
+    background: #2196F3; /* 同添加按钮主色 */
+    color: #fff;
+    border: none;
+    border-radius: 4px; /* 同添加按钮圆角 */
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease; /* 同添加按钮过渡 */
+    margin-left: 10px; /* 与添加按钮间距 */
+}
+
+/* hover 效果与添加按钮一致 */
+#refresh_btn:hover {
+    background: #1976D2; /* 同添加按钮hover色 */
+}
+
+/* （可选）刷新中状态样式 */
+#refresh_btn.refreshing {
+    background: #90CAF9;
+    cursor: wait;
+}
+
+
+/* 汇率类型标签 */
+.exchange_type {
+    font-size: 12px;
+    color: #2196F3;
+    margin-bottom: 5px;
+}
+
+/* 货币对代码 */
+.exchange_code {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+/* 货币名称 */
+.exchange_name {
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 8px;
+}
+
+/* 汇率值 */
+.exchange_rate {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+/* 涨跌幅 */
+.exchange_change {
+    font-size: 12px;
+}
+
+/* 拖动样式 - 核心 */
+.exchange_card {
+    cursor: grab; /* 可拖动光标 */
+    user-select: none; /* 防止拖动选中文本 */
+    transition: all 0.1s ease; /* 拖动过渡 */
+}
+.exchange_card:active {
+    cursor: grabbing; /* 拖动中光标 */
+}
+/* 拖动占位符（提示位置） */
+.drag-placeholder {
+    min-width: 200px;
+    width: 200px;
+    height: 180px;
+    border: 2px dashed #2196F3;
+    border-radius: 6px;
+    background: rgba(33, 150, 243, 0.05);
+    margin: 0 5px;
+}
+/* 拖动中卡片样式 */
+.dragging {
+    opacity: 0.5;
+    transform: scale(1.02);
+}
+
+/* 响应式适配：小屏幕自动调整 */
+@media (max-width: 768px) {
+    .exchange_card {
+        min-width: 180px;
+        width: 180px;
+    }
+}

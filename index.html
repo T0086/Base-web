@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta author="T0086">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <!-- 天气显示容器 -->
+        <div id="weather_container"></div>
+        <!-- lang切换容器 -->
+        <select id="lang_switch">
+            <option value="zh-CN">zh-CN</option>
+            <option value="en-US">en-US</option>
+        </select>
+    </header>
+    <div class="search_engine_container">
+        <select id="search_engine">
+            <option value = "baidu">百度</option>
+            <option value = "google">Google</option>
+            <option value = "yandex">Yandex</option>
+        </select>
+        <input type = "text" id = "search_input" placeholder = "type to search">
+        <button id="search_btn">scan</button>
+    </div>
+    <!-- 第二部分 -->
+    <div class="second_part_container">
+        <!-- 备忘录 -->
+        <div class="todo_container">
+            <div class="todo_add">
+                <input type="text" id="todo_input" placeholder="type what to do">
+                <button id="add_btn">ADD</button>
+            </div>
+            <ul id="todo_list"></ul>
+        </div>
+        <!-- 固定布局的Table表格容器 -->
+        <div class="shortcut_container">
+            <table class="shortcut_table" id="shortcut_table" cellpadding="0" cellspacing="10">
+                <tbody>
+                <!-- 第一行：固定3个单元格 -->
+                <tr>
+                    <td class="shortcut_cell">
+                    <a href="https://www.bilibili.com" target="_blank">
+                        <img class="site_icon" src="https://www.bilibili.com/favicon.ico" alt="BILIBILI">
+                        <span class="site_name">BILIBILI</span>
+                    </a>
+                    </td>
+                    <td class="shortcut_cell">
+                    <a href="https://vidhub.tv/" target="_blank">
+                        <img class="site_icon" src="https://vidhub.tv/favicon.ico" alt="VIDHUB">
+                        <span class="site_name">VIDHUB</span>
+                    </a>
+                    </td>
+                    <td class="shortcut_cell">
+                    <a href="https://www.github.com" target="_blank">
+                        <img class="site_icon"  src="https://www.github.com/favicon.ico" alt="GITHUB">
+                        <span class="site_name">GITHUB</span>
+                    </a>
+                    </td>
+                </tr>
+                <!-- 第二行：固定3个单元格 -->
+                <tr>
+                    <td class="shortcut_cell">
+                    <a href="https://www.qidian.com" target="_blank">
+                        <img class="site_icon" src="https://www.qidian.com/favicon.ico" alt="起点">
+                        <span class="site_name">起点</span>
+                    </a>
+                    </td>
+                    <td class="shortcut_cell">
+                    <a href="https://www.qidian.com" target="_blank">
+                        <img class="site_icon" src="https://www.qidian.com/favicon.ico" alt="起点">
+                        <span class="site_name">起点</span>
+                    </a>
+                    </td>
+                    <td class="shortcut_cell">
+                    <a href="https://www.github.com" target="_blank">
+                        <img class="site_icon"  src="https://www.github.com/favicon.ico" alt="GITHUB">
+                        <span class="site_name">GITHUB</span>
+                    </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+    </div>
+    <!-- 第三部分 -->
+    <!-- 汇率查询模块 -->
+    <div class="exchange_container">
+        <div class="exchange_add">
+            <input type="text" id="exchange_code_input" placeholder="输入货币对（如CNY/USD、EUR/JPY）">
+            <button id="add_exchange_btn">ADD</button>
+            <!-- 在 exchange_add 容器中新增 -->
+            <button id="refresh_btn">Refresh</button>
+        </div>
+        <div class="exchange_list" id="exchange_list"></div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
+
